@@ -1,6 +1,7 @@
 This project contains the following technologies
 
 Authentication and User Management:
+- Clerk (Authentication and User Management)
 
 Core Technologies:
 - React 19

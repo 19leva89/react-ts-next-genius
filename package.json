@@ -12,6 +12,7 @@
     "all": "concurrently \"npm run dev\" \"npx prisma studio\""
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.14.3",
     "@prisma/client": "^6.6.0",
     "@radix-ui/react-slot": "^1.2.0",
     "class-variance-authority": "^0.7.1",
