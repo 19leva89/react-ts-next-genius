@@ -8,6 +8,7 @@ Core Technologies:
 - Next 15 (framework)
 
 Data Fetching and State Management:
+- Prisma 6 (ORM for DB)
 
 Image Handling and Optimization:
 - Sharp (image optimizer)
