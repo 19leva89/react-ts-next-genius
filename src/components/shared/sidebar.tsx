@@ -11,11 +11,11 @@ import {
 	SettingsIcon,
 	VideoIcon,
 } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { Montserrat } from 'next/font/google'
 import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
+import { useClient } from '@/hooks/use-client'
 
 const montserrat = Montserrat({
 	weight: '600',
@@ -74,9 +74,7 @@ interface Props {
 export const Sidebar = () => {
 	const pathname = usePathname()
 
-	const [isMounted, setIsMounted] = useState(false)
-
-	useEffect(() => setIsMounted(true), [])
+	const { isMounted } = useClient()
 
 	if (!isMounted) {
 		return null
@@ -100,7 +98,7 @@ export const Sidebar = () => {
 							href={route.href}
 							className={cn(
 								'flex justify-start w-full p-3 rounded-lg text-sm font-medium cursor-pointer hover:text-white hover:bg-white/10 transition group',
-								pathname === route.href && 'bg-white/10',
+								pathname === route.href ? 'text-white bg-white/10' : 'text-zinc-400',
 							)}
 						>
 							<div className="flex items-center flex-1">

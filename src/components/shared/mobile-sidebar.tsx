@@ -2,8 +2,8 @@
 
 import { MenuIcon } from 'lucide-react'
 
-// import useClient from '@/hook/useClient'
 import { Sidebar } from '@/components/shared'
+import { useClient } from '@/hooks/use-client'
 import { Button, Sheet, SheetContent, SheetTrigger } from '@/components/ui'
 
 interface Props {
@@ -14,13 +14,15 @@ interface Props {
 export const MobileSidebar = () =>
 	// { apiLimitCount, isPro = false }: Props
 	{
-		// const { isMounted } = useClient()
+		const { isMounted } = useClient()
 
-		// if (!isMounted) return null
+		if (!isMounted) {
+			return null
+		}
 
 		return (
 			<Sheet>
-				<SheetTrigger>
+				<SheetTrigger asChild>
 					<Button variant="ghost" size="icon" className="cursor-pointer md:hidden">
 						<MenuIcon />
 					</Button>
