@@ -10,12 +10,19 @@ Core Technologies:
 
 Data Fetching and State Management:
 - Prisma 6 (ORM for DB)
+- Zustand (state management)
+
+Form and Validation:
+- Zod (first schema validation)
 
 Image Handling and Optimization:
 - Sharp (image optimizer)
 
 Middleware and Server Utilities:
 - Concurrently (all projects are running in tandem)
+
+Payment:
+- Stripe (payment service provider)
 
 Styling and UI Frameworks:
 - Next Themes (using theme switcher)
