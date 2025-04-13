@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This project contains the following technologies
 
-## Getting Started
+Authentication and User Management:
 
-First, run the development server:
+Core Technologies:
+- React 19
+- TypeScript
+- Next 15 (framework)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Data Fetching and State Management:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Image Handling and Optimization:
+- Sharp (image optimizer)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Middleware and Server Utilities:
+- Concurrently (all projects are running in tandem)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Styling and UI Frameworks:
+- Next Themes (using theme switcher)
+- shadcn/ui (stylization)
+- Tailwind CSS (stylization)
 
-## Learn More
+Utilities and Libraries:
+- Knip (code analyzer and declutter)
+- PostCSS (transforms CSS code to AST)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the client and server via concurrently:
+terminal powershell -> npm run all
+terminal powershell -> npm run lint (loading ESLint checker)
+terminal powershell -> npm run knip
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+terminal powershell -> npx prisma generate
+terminal powershell -> npx prisma db push
+terminal powershell -> npx prisma db pull
+terminal powershell -> npx prisma db seed (loading test DB)
+terminal powershell -> npx prisma migrate reset
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+terminal CommandPrompt -> stripe login
+terminal CommandPrompt -> stripe listen --forward-to localhost:3000/api/webhook
