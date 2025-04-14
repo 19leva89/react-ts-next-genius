@@ -174,11 +174,12 @@ const config = {
     "db"
   ],
   "activeProvider": "mysql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "mysql://avnadmin:AVNS_TrwsH8IniCUcsiceZRC@db-my-sql-db.g.aivencloud.com:28671/next-genius?ssl-mode=REQUIRED"
+        "value": null
       }
     }
   },

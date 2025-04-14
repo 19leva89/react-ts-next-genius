@@ -1,15 +1,22 @@
 import OpenAI from 'openai'
 import { auth } from '@clerk/nextjs/server'
 import { NextRequest, NextResponse } from 'next/server'
+import { ChatCompletionMessageParam } from 'openai/resources/chat/index.mjs'
 
 import { checkSubscription } from '@/lib/subscription'
-import { increaseApiLimit, checkApiLimit } from '@/lib/api-limit'
+import { checkApiLimit, increaseApiLimit } from '@/lib/api-limit'
 
 const configuration = {
 	apiKey: process.env.OPENAI_API_KEY,
 }
 
 const openai = new OpenAI(configuration)
+
+const instructionMessage: ChatCompletionMessageParam = {
+	role: 'system',
+	content:
+		'You are a code generator. You must answer only in markdown code snippets. Use code comments for explanations.',
+}
 
 export async function POST(req: NextRequest) {
 	try {
@@ -52,7 +59,7 @@ export async function POST(req: NextRequest) {
 
 		const response = await openai.chat.completions.create({
 			model: 'gpt-3.5-turbo',
-			messages,
+			messages: [instructionMessage, ...messages],
 		})
 
 		if (!isPro) {
@@ -61,7 +68,7 @@ export async function POST(req: NextRequest) {
 
 		return NextResponse.json(response.choices[0].message)
 	} catch (error) {
-		console.log('[CONVERSATION_ERROR]', error)
+		console.log('[CODE_ERROR]', error)
 
 		return new NextResponse('Internal error', { status: 500 })
 	}

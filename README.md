@@ -12,7 +12,9 @@ Core Technologies:
 - Next 15 (framework)
 
 Data Fetching and State Management:
+- Axios (sending requests to backend)
 - Prisma 6 (ORM for DB)
+- React Hook Form (working with forms)
 - Zustand (state management)
 
 Form and Validation:
@@ -28,9 +30,15 @@ Payment:
 - Stripe (payment service provider)
 
 Styling and UI Frameworks:
+- Lucide React (stylization)
 - Next Themes (using theme switcher)
 - shadcn/ui (stylization)
 - Tailwind CSS (stylization)
+- Sonner (stylization)
+
+Text Editing:
+- React Markdown
+- React Syntax Highlighter (adding syntax highlight to code)
 
 Utilities and Libraries:
 - Knip (code analyzer and declutter)
