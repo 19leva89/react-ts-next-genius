@@ -117,10 +117,21 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.UserScalarFieldEnum = {
+exports.Prisma.UserApiLimitScalarFieldEnum = {
   id: 'id',
-  email: 'email',
-  name: 'name'
+  userId: 'userId',
+  count: 'count',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
+};
+
+exports.Prisma.UserSubscriptionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  stripeCustomerId: 'stripeCustomerId',
+  stripeSubscriptionId: 'stripeSubscriptionId',
+  stripePriceId: 'stripePriceId',
+  stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd'
 };
 
 exports.Prisma.SortOrder = {
@@ -128,9 +139,9 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
-exports.Prisma.QueryMode = {
-  default: 'default',
-  insensitive: 'insensitive'
+exports.Prisma.UserApiLimitOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId'
 };
 
 exports.Prisma.NullsOrder = {
@@ -138,9 +149,18 @@ exports.Prisma.NullsOrder = {
   last: 'last'
 };
 
+exports.Prisma.UserSubscriptionOrderByRelevanceFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  stripeCustomerId: 'stripeCustomerId',
+  stripeSubscriptionId: 'stripeSubscriptionId',
+  stripePriceId: 'stripePriceId'
+};
+
 
 exports.Prisma.ModelName = {
-  User: 'User'
+  UserApiLimit: 'UserApiLimit',
+  UserSubscription: 'UserSubscription'
 };
 
 /**

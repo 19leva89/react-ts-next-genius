@@ -11,7 +11,7 @@ export const Empty = ({ label }: Props) => {
 				<Image src="/img/empty.png" alt="Empty" fill />
 			</div>
 
-			<p className="text-muted-foreground text-sm text-center">{label}</p>
+			<p className="text-center text-sm text-muted-foreground">{label}</p>
 		</div>
 	)
 }

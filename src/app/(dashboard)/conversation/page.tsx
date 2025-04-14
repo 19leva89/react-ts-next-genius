@@ -44,6 +44,8 @@ const ConversationPage = () => {
 			})
 
 			setMessages((current) => [...current, userMessage, response.data])
+
+			form.reset()
 		} catch (error: any) {
 			if (error?.response?.status === 403) {
 				onOpen() // open pro modal
@@ -119,7 +121,7 @@ const ConversationPage = () => {
 							>
 								{msg.role === 'user' ? <UserAvatar /> : <BotAvatar />}
 
-								<div className="text-sm">{msg.content as string}</div>
+								<p className="text-sm">{msg.content as string}</p>
 							</div>
 						))}
 					</div>
