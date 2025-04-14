@@ -4,7 +4,7 @@ import { MenuIcon } from 'lucide-react'
 
 import { Sidebar } from '@/components/shared'
 import { useClient } from '@/hooks/use-client'
-import { Button, Sheet, SheetContent, SheetTrigger } from '@/components/ui'
+import { Button, Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui'
 
 interface Props {
 	apiLimitCount: number
@@ -28,7 +28,11 @@ export const MobileSidebar = () =>
 					</Button>
 				</SheetTrigger>
 
-				<SheetContent side="left" className="p-0">
+				<SheetContent side="left" className="p-0" aria-describedby={undefined}>
+					<SheetTitle className="hidden" />
+
+					<SheetDescription className="hidden" />
+
 					<Sidebar
 					// isPro={isPro}
 					// apiLimitCount={apiLimitCount}
