@@ -2,6 +2,7 @@ This project contains the following technologies
 
 AI (Artificial Intelligence) tools:
 - OpenAI (creating AI models)
+- Replicate (creating AI models)
 
 Authentication and User Management:
 - Clerk (Authentication and User Management)
