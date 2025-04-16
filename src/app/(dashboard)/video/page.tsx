@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { toast } from 'sonner'
 import { useState } from 'react'
-import { MusicIcon } from 'lucide-react'
+import { VideoIcon } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -13,12 +13,12 @@ import { Empty, Heading, Loader } from '@/components/shared'
 import { IFormSchema, formSchema } from './_constants/form-schema'
 import { Button, Form, FormControl, FormField, FormItem, Input } from '@/components/ui'
 
-const MusicPage = () => {
+const VideoPage = () => {
 	const router = useRouter()
 
 	const { onOpen } = userProModal()
 
-	const [musicUrl, setMusicUrl] = useState<string>()
+	const [videoUrl, setVideoUrl] = useState<string>()
 
 	const form = useForm<IFormSchema>({
 		resolver: zodResolver(formSchema),
@@ -31,13 +31,13 @@ const MusicPage = () => {
 
 	const onSubmit = async (values: IFormSchema) => {
 		try {
-			setMusicUrl(undefined)
+			setVideoUrl(undefined)
 
-			const response = await axios.post('/api/music', values)
+			const response = await axios.post('/api/video', values)
 
-			setMusicUrl(response.data.audio)
+			setVideoUrl(response.data.video)
 
-			// form.reset()
+			form.reset()
 		} catch (error: any) {
 			if (error?.response?.status === 403) {
 				onOpen() // open pro modal
@@ -52,11 +52,11 @@ const MusicPage = () => {
 	return (
 		<div>
 			<Heading
-				title="Music Generation"
-				description="Turn your prompt into music"
-				icon={MusicIcon}
-				iconColor="text-emerald-500"
-				bgColor="bg-emerald-500/10"
+				title="Video Generation"
+				description="Turn your prompt into video"
+				icon={VideoIcon}
+				iconColor="text-orange-700"
+				bgColor="bg-orange-700/10"
 			/>
 
 			<div className="px-4 lg:px-8">
@@ -74,7 +74,7 @@ const MusicPage = () => {
 											<Input
 												{...field}
 												disabled={isLoading}
-												placeholder="Piano solo"
+												placeholder="Clown fish swimming around a coral reef"
 												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
 											/>
 										</FormControl>
@@ -100,12 +100,12 @@ const MusicPage = () => {
 						</div>
 					)}
 
-					{!musicUrl && !isLoading && <Empty label="No music generated" />}
+					{!videoUrl && !isLoading && <Empty label="No video generated" />}
 
-					{musicUrl && (
-						<audio controls className="w-full mt-8">
-							<source src={musicUrl} />
-						</audio>
+					{videoUrl && (
+						<video controls className="w-full mt-8 border rounded-lg aspect-video bg-black">
+							<source src={videoUrl} />
+						</video>
 					)}
 				</div>
 			</div>
@@ -113,4 +113,4 @@ const MusicPage = () => {
 	)
 }
 
-export default MusicPage
+export default VideoPage

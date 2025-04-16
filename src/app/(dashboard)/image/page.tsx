@@ -25,8 +25,10 @@ import {
 	SelectValue,
 } from '@/components/ui'
 import { userProModal } from '@/hooks/user-pro-modal'
+import { amountOptions } from './_constants/amount-options'
 import { Empty, Heading, Loader } from '@/components/shared'
-import { amountOptions, formSchema, IFormSchema, resolutionOptions } from './_constants/constants'
+import { formSchema, IFormSchema } from './_constants/form-schema'
+import { resolutionOptions } from './_constants/resolution-options'
 
 const ImagePage = () => {
 	const router = useRouter()

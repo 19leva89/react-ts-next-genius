@@ -11,7 +11,7 @@ import { ChatCompletionMessageParam } from 'openai/resources/chat/index.mjs'
 
 import { cn } from '@/lib/utils'
 import { userProModal } from '@/hooks/user-pro-modal'
-import { IFormSchema, formSchema } from './_constants/constants'
+import { IFormSchema, formSchema } from './_constants/form-schema'
 import { BotAvatar, Empty, Heading, Loader, UserAvatar } from '@/components/shared'
 import { Button, Form, FormControl, FormField, FormItem, Input } from '@/components/ui'
 
