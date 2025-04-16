@@ -26,7 +26,7 @@ export const FreeCounter = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 				<CardContent>
 					<div className="mb-4 space-y-2 text-center text-sm text-white">
 						<p>
-							{apiLimitCount} / {MAX_FREE_COUNTS} Free Generations
+							{apiLimitCount} / {MAX_FREE_COUNTS} Free generations
 						</p>
 
 						<Progress className="h-3 bg-secondary" value={(apiLimitCount / MAX_FREE_COUNTS) * 100} />
