@@ -1877,6 +1877,8 @@ export namespace Prisma {
     stripeSubscriptionId: string | null
     stripePriceId: string | null
     stripeCurrentPeriodEnd: Date | null
+    createdAt: Date | null
+    updateAt: Date | null
   }
 
   export type UserSubscriptionMaxAggregateOutputType = {
@@ -1886,6 +1888,8 @@ export namespace Prisma {
     stripeSubscriptionId: string | null
     stripePriceId: string | null
     stripeCurrentPeriodEnd: Date | null
+    createdAt: Date | null
+    updateAt: Date | null
   }
 
   export type UserSubscriptionCountAggregateOutputType = {
@@ -1895,6 +1899,8 @@ export namespace Prisma {
     stripeSubscriptionId: number
     stripePriceId: number
     stripeCurrentPeriodEnd: number
+    createdAt: number
+    updateAt: number
     _all: number
   }
 
@@ -1906,6 +1912,8 @@ export namespace Prisma {
     stripeSubscriptionId?: true
     stripePriceId?: true
     stripeCurrentPeriodEnd?: true
+    createdAt?: true
+    updateAt?: true
   }
 
   export type UserSubscriptionMaxAggregateInputType = {
@@ -1915,6 +1923,8 @@ export namespace Prisma {
     stripeSubscriptionId?: true
     stripePriceId?: true
     stripeCurrentPeriodEnd?: true
+    createdAt?: true
+    updateAt?: true
   }
 
   export type UserSubscriptionCountAggregateInputType = {
@@ -1924,6 +1934,8 @@ export namespace Prisma {
     stripeSubscriptionId?: true
     stripePriceId?: true
     stripeCurrentPeriodEnd?: true
+    createdAt?: true
+    updateAt?: true
     _all?: true
   }
 
@@ -2006,6 +2018,8 @@ export namespace Prisma {
     stripeSubscriptionId: string | null
     stripePriceId: string | null
     stripeCurrentPeriodEnd: Date | null
+    createdAt: Date
+    updateAt: Date
     _count: UserSubscriptionCountAggregateOutputType | null
     _min: UserSubscriptionMinAggregateOutputType | null
     _max: UserSubscriptionMaxAggregateOutputType | null
@@ -2032,6 +2046,8 @@ export namespace Prisma {
     stripeSubscriptionId?: boolean
     stripePriceId?: boolean
     stripeCurrentPeriodEnd?: boolean
+    createdAt?: boolean
+    updateAt?: boolean
   }, ExtArgs["result"]["userSubscription"]>
 
 
@@ -2043,9 +2059,11 @@ export namespace Prisma {
     stripeSubscriptionId?: boolean
     stripePriceId?: boolean
     stripeCurrentPeriodEnd?: boolean
+    createdAt?: boolean
+    updateAt?: boolean
   }
 
-  export type UserSubscriptionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "stripeCustomerId" | "stripeSubscriptionId" | "stripePriceId" | "stripeCurrentPeriodEnd", ExtArgs["result"]["userSubscription"]>
+  export type UserSubscriptionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "userId" | "stripeCustomerId" | "stripeSubscriptionId" | "stripePriceId" | "stripeCurrentPeriodEnd" | "createdAt" | "updateAt", ExtArgs["result"]["userSubscription"]>
 
   export type $UserSubscriptionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "UserSubscription"
@@ -2057,6 +2075,8 @@ export namespace Prisma {
       stripeSubscriptionId: string | null
       stripePriceId: string | null
       stripeCurrentPeriodEnd: Date | null
+      createdAt: Date
+      updateAt: Date
     }, ExtArgs["result"]["userSubscription"]>
     composites: {}
   }
@@ -2432,6 +2452,8 @@ export namespace Prisma {
     readonly stripeSubscriptionId: FieldRef<"UserSubscription", 'String'>
     readonly stripePriceId: FieldRef<"UserSubscription", 'String'>
     readonly stripeCurrentPeriodEnd: FieldRef<"UserSubscription", 'DateTime'>
+    readonly createdAt: FieldRef<"UserSubscription", 'DateTime'>
+    readonly updateAt: FieldRef<"UserSubscription", 'DateTime'>
   }
     
 
@@ -2784,7 +2806,9 @@ export namespace Prisma {
     stripeCustomerId: 'stripeCustomerId',
     stripeSubscriptionId: 'stripeSubscriptionId',
     stripePriceId: 'stripePriceId',
-    stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd'
+    stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd',
+    createdAt: 'createdAt',
+    updateAt: 'updateAt'
   };
 
   export type UserSubscriptionScalarFieldEnum = (typeof UserSubscriptionScalarFieldEnum)[keyof typeof UserSubscriptionScalarFieldEnum]
@@ -2926,6 +2950,8 @@ export namespace Prisma {
     stripeSubscriptionId?: StringNullableFilter<"UserSubscription"> | string | null
     stripePriceId?: StringNullableFilter<"UserSubscription"> | string | null
     stripeCurrentPeriodEnd?: DateTimeNullableFilter<"UserSubscription"> | Date | string | null
+    createdAt?: DateTimeFilter<"UserSubscription"> | Date | string
+    updateAt?: DateTimeFilter<"UserSubscription"> | Date | string
   }
 
   export type UserSubscriptionOrderByWithRelationInput = {
@@ -2935,6 +2961,8 @@ export namespace Prisma {
     stripeSubscriptionId?: SortOrderInput | SortOrder
     stripePriceId?: SortOrderInput | SortOrder
     stripeCurrentPeriodEnd?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updateAt?: SortOrder
     _relevance?: UserSubscriptionOrderByRelevanceInput
   }
 
@@ -2948,6 +2976,8 @@ export namespace Prisma {
     NOT?: UserSubscriptionWhereInput | UserSubscriptionWhereInput[]
     stripePriceId?: StringNullableFilter<"UserSubscription"> | string | null
     stripeCurrentPeriodEnd?: DateTimeNullableFilter<"UserSubscription"> | Date | string | null
+    createdAt?: DateTimeFilter<"UserSubscription"> | Date | string
+    updateAt?: DateTimeFilter<"UserSubscription"> | Date | string
   }, "id" | "userId" | "stripeCustomerId" | "stripeSubscriptionId">
 
   export type UserSubscriptionOrderByWithAggregationInput = {
@@ -2957,6 +2987,8 @@ export namespace Prisma {
     stripeSubscriptionId?: SortOrderInput | SortOrder
     stripePriceId?: SortOrderInput | SortOrder
     stripeCurrentPeriodEnd?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updateAt?: SortOrder
     _count?: UserSubscriptionCountOrderByAggregateInput
     _max?: UserSubscriptionMaxOrderByAggregateInput
     _min?: UserSubscriptionMinOrderByAggregateInput
@@ -2972,6 +3004,8 @@ export namespace Prisma {
     stripeSubscriptionId?: StringNullableWithAggregatesFilter<"UserSubscription"> | string | null
     stripePriceId?: StringNullableWithAggregatesFilter<"UserSubscription"> | string | null
     stripeCurrentPeriodEnd?: DateTimeNullableWithAggregatesFilter<"UserSubscription"> | Date | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"UserSubscription"> | Date | string
+    updateAt?: DateTimeWithAggregatesFilter<"UserSubscription"> | Date | string
   }
 
   export type UserApiLimitCreateInput = {
@@ -3037,6 +3071,8 @@ export namespace Prisma {
     stripeSubscriptionId?: string | null
     stripePriceId?: string | null
     stripeCurrentPeriodEnd?: Date | string | null
+    createdAt?: Date | string
+    updateAt?: Date | string
   }
 
   export type UserSubscriptionUncheckedCreateInput = {
@@ -3046,6 +3082,8 @@ export namespace Prisma {
     stripeSubscriptionId?: string | null
     stripePriceId?: string | null
     stripeCurrentPeriodEnd?: Date | string | null
+    createdAt?: Date | string
+    updateAt?: Date | string
   }
 
   export type UserSubscriptionUpdateInput = {
@@ -3055,6 +3093,8 @@ export namespace Prisma {
     stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
     stripePriceId?: NullableStringFieldUpdateOperationsInput | string | null
     stripeCurrentPeriodEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserSubscriptionUncheckedUpdateInput = {
@@ -3064,6 +3104,8 @@ export namespace Prisma {
     stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
     stripePriceId?: NullableStringFieldUpdateOperationsInput | string | null
     stripeCurrentPeriodEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserSubscriptionCreateManyInput = {
@@ -3073,6 +3115,8 @@ export namespace Prisma {
     stripeSubscriptionId?: string | null
     stripePriceId?: string | null
     stripeCurrentPeriodEnd?: Date | string | null
+    createdAt?: Date | string
+    updateAt?: Date | string
   }
 
   export type UserSubscriptionUpdateManyMutationInput = {
@@ -3082,6 +3126,8 @@ export namespace Prisma {
     stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
     stripePriceId?: NullableStringFieldUpdateOperationsInput | string | null
     stripeCurrentPeriodEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserSubscriptionUncheckedUpdateManyInput = {
@@ -3091,6 +3137,8 @@ export namespace Prisma {
     stripeSubscriptionId?: NullableStringFieldUpdateOperationsInput | string | null
     stripePriceId?: NullableStringFieldUpdateOperationsInput | string | null
     stripeCurrentPeriodEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -3260,6 +3308,8 @@ export namespace Prisma {
     stripeSubscriptionId?: SortOrder
     stripePriceId?: SortOrder
     stripeCurrentPeriodEnd?: SortOrder
+    createdAt?: SortOrder
+    updateAt?: SortOrder
   }
 
   export type UserSubscriptionMaxOrderByAggregateInput = {
@@ -3269,6 +3319,8 @@ export namespace Prisma {
     stripeSubscriptionId?: SortOrder
     stripePriceId?: SortOrder
     stripeCurrentPeriodEnd?: SortOrder
+    createdAt?: SortOrder
+    updateAt?: SortOrder
   }
 
   export type UserSubscriptionMinOrderByAggregateInput = {
@@ -3278,6 +3330,8 @@ export namespace Prisma {
     stripeSubscriptionId?: SortOrder
     stripePriceId?: SortOrder
     stripeCurrentPeriodEnd?: SortOrder
+    createdAt?: SortOrder
+    updateAt?: SortOrder
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {

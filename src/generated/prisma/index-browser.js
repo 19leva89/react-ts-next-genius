@@ -131,7 +131,9 @@ exports.Prisma.UserSubscriptionScalarFieldEnum = {
   stripeCustomerId: 'stripeCustomerId',
   stripeSubscriptionId: 'stripeSubscriptionId',
   stripePriceId: 'stripePriceId',
-  stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd'
+  stripeCurrentPeriodEnd: 'stripeCurrentPeriodEnd',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
 };
 
 exports.Prisma.SortOrder = {

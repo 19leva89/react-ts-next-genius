@@ -16,6 +16,7 @@ import { usePathname } from 'next/navigation'
 
 import { cn } from '@/lib/utils'
 import { useClient } from '@/hooks/use-client'
+import { FreeCounter } from '@/components/shared'
 
 const montserrat = Montserrat({
 	weight: '600',
@@ -67,11 +68,11 @@ const routes = [
 ]
 
 interface Props {
-	apiLimitCount: number
 	isPro: boolean
+	apiLimitCount: number
 }
 
-export const Sidebar = () => {
+export const Sidebar = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 	const pathname = usePathname()
 
 	const { isMounted } = useClient()
@@ -111,7 +112,7 @@ export const Sidebar = () => {
 				</div>
 			</div>
 
-			{/* <FreeCounter apiLimitCount={apiLimitCount} /> */}
+			<FreeCounter isPro={isPro} apiLimitCount={apiLimitCount} />
 		</div>
 	)
 }
