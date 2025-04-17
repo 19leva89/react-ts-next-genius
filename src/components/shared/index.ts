@@ -1,5 +1,5 @@
-// export { ClearButton } from './clear-button'
 export { BotAvatar } from './bot-avatar'
+export { CrispChat } from './crisp-chat'
 export { Empty } from './empty'
 export { FreeCounter } from './free-counter'
 export { Heading } from './heading'

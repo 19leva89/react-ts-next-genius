@@ -1,3 +1,5 @@
+Crisp
+
 This project contains the following technologies
 
 AI (Artificial Intelligence) tools:
