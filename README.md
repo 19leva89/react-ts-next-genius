@@ -6,6 +6,9 @@ AI (Artificial Intelligence) tools:
 - OpenAI (creating AI models)
 - Replicate (creating AI models)
 
+Animation and Interaction:
+- Typed.js (text animation)
+
 Authentication and User Management:
 - Clerk (Authentication and User Management)
 

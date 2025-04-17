@@ -1,20 +1,13 @@
-import Link from 'next/link'
-
-import { Button } from '@/components/ui'
+import { LandingContent, LandingHero, LandingNavbar } from '@/components/shared'
 
 const LandingPage = () => {
 	return (
-		<div>
-			Landing page
-			<div>
-				<Link href="/sign-in">
-					<Button className="cursor-pointer">Login</Button>
-				</Link>
+		<div className="h-full">
+			<LandingNavbar />
 
-				<Link href="/sign-up">
-					<Button className="cursor-pointer">Register</Button>
-				</Link>
-			</div>
+			<LandingHero />
+
+			<LandingContent />
 		</div>
 	)
 }
