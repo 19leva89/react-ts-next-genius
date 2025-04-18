@@ -1,5 +1,3 @@
-Crisp
-
 This project contains the following technologies
 
 AI (Artificial Intelligence) tools:
@@ -34,6 +32,9 @@ Middleware and Server Utilities:
 
 Payment:
 - Stripe (payment service provider)
+
+Real-time Communication:
+- Crisp (chat service provider)
 
 Styling and UI Frameworks:
 - Lucide React (stylization)
