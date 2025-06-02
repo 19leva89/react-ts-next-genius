@@ -6,7 +6,7 @@ export const UserAvatar = () => {
 	const { user } = useUser()
 
 	return (
-		<Avatar className="size-8">
+		<Avatar className='size-8'>
 			<AvatarImage src={user?.imageUrl} />
 
 			<AvatarFallback>

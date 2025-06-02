@@ -82,48 +82,48 @@ export const ProModal = () => {
 	return (
 		<Dialog open={isOpen} onOpenChange={onClose}>
 			<DialogContent aria-describedby={undefined}>
-				<DialogHeader className="flex justify-center items-center flex-col gap-y-4 pb-2">
+				<DialogHeader className='flex flex-col items-center justify-center gap-y-4 pb-2'>
 					<DialogTitle>
-						<div className="flex items-center gap-x-2 py-1 font-bold">
+						<div className='flex items-center gap-x-2 py-1 font-bold'>
 							Upgrade to Genius
-							<Badge variant="premium" className="py-1 uppercase text-sm">
+							<Badge variant='premium' className='py-1 text-sm uppercase'>
 								pro
 							</Badge>
 						</div>
 					</DialogTitle>
 
-					<DialogDescription className="hidden" />
+					<DialogDescription className='hidden' />
 				</DialogHeader>
 
-				<div className="w-full pt-2 space-y-2 text-center text-sm font-medium text-zinc-900">
+				<div className='w-full space-y-2 pt-2 text-center text-sm font-medium text-zinc-900'>
 					{tools.map((tool) => (
-						<Card key={tool.label} className="flex flex-row items-center justify-between p-3 border-black/5">
-							<div className="flex items-center gap-x-4">
-								<div className={cn('w-fit p-2 rounded-md', tool.bgColor)}>
+						<Card key={tool.label} className='flex flex-row items-center justify-between border-black/5 p-3'>
+							<div className='flex items-center gap-x-4'>
+								<div className={cn('w-fit rounded-md p-2', tool.bgColor)}>
 									<tool.icon className={cn('size-6', tool.color)} />
 								</div>
 
-								<div className="font-semibold text-sm">{tool.label}</div>
+								<div className='text-sm font-semibold'>{tool.label}</div>
 							</div>
 
-							<CheckIcon className="size-5 text-primary" />
+							<CheckIcon className='size-5 text-primary' />
 						</Card>
 					))}
 				</div>
 
-				<DialogFooter className="w-full">
+				<DialogFooter className='w-full'>
 					<Button
-						variant="premium"
-						size="lg"
+						variant='premium'
+						size='lg'
 						disabled={loading}
 						onClick={onSubscribe}
-						className="w-full cursor-pointer"
+						className='w-full cursor-pointer'
 					>
 						{loading ? (
-							<LoaderIcon className="size-4 ml-2 fill-white animate-spin" />
+							<LoaderIcon className='ml-2 size-4 animate-spin fill-white' />
 						) : (
 							<>
-								Upgrade <ZapIcon className="size-4 ml-2 fill-white" />
+								Upgrade <ZapIcon className='ml-2 size-4 fill-white' />
 							</>
 						)}
 					</Button>

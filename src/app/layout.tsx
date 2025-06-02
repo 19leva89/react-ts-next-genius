@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<ClerkProvider>
-			<html lang="en">
+			<html lang='en'>
 				<CrispProvider />
 
 				<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 
 					{children}
 
-					<Toaster position="bottom-right" expand={false} richColors />
+					<Toaster position='bottom-right' expand={false} richColors />
 				</body>
 			</html>
 		</ClerkProvider>

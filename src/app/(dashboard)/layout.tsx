@@ -9,12 +9,12 @@ const DashboardLayout = async ({ children }: PropsWithChildren) => {
 	const apiLimitCount = await getApiLimitCount()
 
 	return (
-		<div className="relative h-full">
-			<div className="h-full bg-gray-900 hidden md:flex md:flex-col md:w-72 md:fixed md:inset-y-0">
+		<div className='relative h-full'>
+			<div className='hidden h-full bg-gray-900 md:fixed md:inset-y-0 md:flex md:w-72 md:flex-col'>
 				<Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
 			</div>
 
-			<main className="md:ml-72">
+			<main className='md:ml-72'>
 				<Navbar />
 
 				{children}

@@ -48,30 +48,30 @@ const DashboardPage = () => {
 	const router = useRouter()
 
 	return (
-		<div className="container">
-			<div className="mb-8 space-y-4">
-				<h2 className="text-2xl md:text-4xl font-bold text-center">Explore the power of AI</h2>
+		<div className='container'>
+			<div className='mb-8 space-y-4'>
+				<h2 className='text-center text-2xl font-bold md:text-4xl'>Explore the power of AI</h2>
 
-				<p className="text-muted-foreground font-light text-sm md:text-lg text-center">
+				<p className='text-center text-sm font-light text-muted-foreground md:text-lg'>
 					Chat with the smartest AI - Experience the power of AI
 				</p>
 			</div>
 
-			<div className="px-4 md:px-20 lg:px-32 space-y-4">
+			<div className='space-y-4 px-4 md:px-20 lg:px-32'>
 				{tools.map((tool) => (
 					<Card
 						key={tool.href}
 						onClick={() => router.push(tool.href)}
-						className="flex items-center justify-between p-4 border-black/5 hover:shadow-md transition cursor-pointer"
+						className='flex cursor-pointer items-center justify-between border-black/5 p-4 transition hover:shadow-md'
 					>
-						<div className="flex items-center gap-x-4">
-							<div className={cn('w-fit p-2 rounded-md', tool.bgColor)}>
+						<div className='flex items-center gap-x-4'>
+							<div className={cn('w-fit rounded-md p-2', tool.bgColor)}>
 								<tool.icon className={cn('size-8', tool.color)} />
 							</div>
 
-							<div className="font-semibold">{tool.label}</div>
+							<div className='font-semibold'>{tool.label}</div>
 
-							<ArrowRightIcon className="size-5" />
+							<ArrowRightIcon className='size-5' />
 						</div>
 					</Card>
 				))}

@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 		let body
 		try {
 			body = await req.json()
-		} catch (error) {
+		} catch {
 			return new NextResponse('Invalid JSON format', { status: 400 })
 		}
 

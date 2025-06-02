@@ -35,11 +35,11 @@ export const SubscriptionButton = ({ isPro = false }: Props) => {
 			variant={isPro ? 'default' : 'premium'}
 			disabled={loading}
 			onClick={onClick}
-			className="cursor-pointer"
+			className='cursor-pointer'
 		>
 			{isPro ? 'Manage Subscription' : 'Upgrade'}
 
-			{!isPro && <ZapIcon className="size-4 ml-2 fill-white" />}
+			{!isPro && <ZapIcon className='ml-2 size-4 fill-white' />}
 		</Button>
 	)
 }

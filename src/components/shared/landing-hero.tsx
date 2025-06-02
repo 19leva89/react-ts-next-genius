@@ -28,26 +28,26 @@ export const LandingHero = () => {
 	}, [])
 
 	return (
-		<div className="space-y-5 text-white font-bold py-36 text-center">
-			<div className="space-y-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
+		<div className='space-y-5 py-36 text-center font-bold text-white'>
+			<div className='space-y-5 text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl'>
 				<h1>The Best AI Tool for</h1>
 
-				<div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+				<div className='bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent'>
 					<span ref={typedRef} />
 				</div>
 			</div>
 
-			<div className="text-sm md:text-xl font-light text-zinc-400">Create content using AI 10x faster</div>
+			<div className='text-sm font-light text-zinc-400 md:text-xl'>Create content using AI 10x faster</div>
 
 			<div>
 				<Link href={isSignedIn ? '/dashboard' : '/sign-up'}>
-					<Button variant="premium" className="md:text-lg md:p6 rounded-full font-semibold cursor-pointer">
+					<Button variant='premium' className='md:p6 cursor-pointer rounded-full font-semibold md:text-lg'>
 						Start Generating For Free
 					</Button>
 				</Link>
 			</div>
 
-			<div className="text-zinc-400 text-xs md:text-sm font-normal">No credit card required</div>
+			<div className='text-xs font-normal text-zinc-400 md:text-sm'>No credit card required</div>
 		</div>
 	)
 }

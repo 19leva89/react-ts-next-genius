@@ -9,15 +9,15 @@ const SettingsPage = async () => {
 	return (
 		<div>
 			<Heading
-				title="Settings"
-				description="Manage account settings"
+				title='Settings'
+				description='Manage account settings'
 				icon={SettingsIcon}
-				iconColor="text-gray-700"
-				bgColor="bg-gray-700/10"
+				iconColor='text-gray-700'
+				bgColor='bg-gray-700/10'
 			/>
 
-			<div className="px-4 lg:px-8 space-y-4">
-				<div className="text-muted-foreground text-sm">
+			<div className='space-y-4 px-4 lg:px-8'>
+				<div className='text-sm text-muted-foreground'>
 					You are currently on a {isPro ? 'Pro' : 'Free'} plan
 				</div>
 
