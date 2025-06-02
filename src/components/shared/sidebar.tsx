@@ -82,28 +82,28 @@ export const Sidebar = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 	}
 
 	return (
-		<div className="flex flex-col py-4 space-y-4 h-full bg-[#111827] text-white">
-			<div className="flex flex-col flex-1 gap-14 px-3 py-2">
-				<Link href="/dashboard" className="flex items-center w-min pl-3">
-					<div className="relative size-8 mr-4">
-						<Image src="/img/logo.png" alt="Logo" fill />
+		<div className='flex h-full flex-col space-y-4 bg-[#111827] py-4 text-white'>
+			<div className='flex flex-1 flex-col gap-14 px-3 py-2'>
+				<Link href='/dashboard' className='flex w-min items-center pl-3'>
+					<div className='relative mr-4 size-8'>
+						<Image src='/img/logo.png' alt='Logo' fill />
 					</div>
 
-					<h1 className={cn('text-2xl font-bold overflow-hidden', montserrat.className)}>Genius</h1>
+					<h1 className={cn('overflow-hidden text-2xl font-bold', montserrat.className)}>Genius</h1>
 				</Link>
 
-				<div className="space-y-1">
+				<div className='space-y-1'>
 					{routes.map((route) => (
 						<Link
 							key={route.href}
 							href={route.href}
 							className={cn(
-								'flex justify-start w-full p-3 rounded-lg text-sm font-medium cursor-pointer hover:text-white hover:bg-white/10 transition group',
-								pathname === route.href ? 'text-white bg-white/10' : 'text-zinc-400',
+								'group flex w-full cursor-pointer justify-start rounded-lg p-3 text-sm font-medium transition hover:bg-white/10 hover:text-white',
+								pathname === route.href ? 'bg-white/10 text-white' : 'text-zinc-400',
 							)}
 						>
-							<div className="flex items-center flex-1">
-								<route.icon className={cn('size-5 mr-3', route.color)} />
+							<div className='flex flex-1 items-center'>
+								<route.icon className={cn('mr-3 size-5', route.color)} />
 
 								{route.label}
 							</div>

@@ -21,15 +21,15 @@ export const MobileSidebar = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 	return (
 		<Sheet>
 			<SheetTrigger asChild>
-				<Button variant="ghost" size="icon" className="cursor-pointer md:hidden">
+				<Button variant='ghost' size='icon' className='cursor-pointer md:hidden'>
 					<MenuIcon />
 				</Button>
 			</SheetTrigger>
 
-			<SheetContent side="left" className="p-0" aria-describedby={undefined}>
-				<SheetTitle className="hidden" />
+			<SheetContent side='left' className='p-0' aria-describedby={undefined}>
+				<SheetTitle className='hidden' />
 
-				<SheetDescription className="hidden" />
+				<SheetDescription className='hidden' />
 
 				<Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
 			</SheetContent>

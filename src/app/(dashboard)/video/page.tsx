@@ -52,30 +52,30 @@ const VideoPage = () => {
 	return (
 		<div>
 			<Heading
-				title="Video Generation"
-				description="Turn your prompt into video"
+				title='Video Generation'
+				description='Turn your prompt into video'
 				icon={VideoIcon}
-				iconColor="text-orange-700"
-				bgColor="bg-orange-700/10"
+				iconColor='text-orange-700'
+				bgColor='bg-orange-700/10'
 			/>
 
-			<div className="px-4 lg:px-8">
+			<div className='px-4 lg:px-8'>
 				<div>
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
-							className="grid grid-cols-12 gap-2 w-full p-4 px-3 md:px-6 border rounded-lg focus-within:shadow-sm"
+							className='grid w-full grid-cols-12 gap-2 rounded-lg border p-4 px-3 focus-within:shadow-sm md:px-6'
 						>
 							<FormField
-								name="prompt"
+								name='prompt'
 								render={({ field }) => (
-									<FormItem className="col-span-12 lg:col-span-10">
-										<FormControl className="m-0 p-0 px-2">
+									<FormItem className='col-span-12 lg:col-span-10'>
+										<FormControl className='m-0 p-0 px-2'>
 											<Input
 												{...field}
 												disabled={isLoading}
-												placeholder="Clown fish swimming around a coral reef"
-												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+												placeholder='Clown fish swimming around a coral reef'
+												className='border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent'
 											/>
 										</FormControl>
 									</FormItem>
@@ -83,9 +83,9 @@ const VideoPage = () => {
 							/>
 
 							<Button
-								type="submit"
+								type='submit'
 								disabled={isLoading}
-								className="col-span-12 lg:col-span-2 w-full cursor-pointer"
+								className='col-span-12 w-full cursor-pointer lg:col-span-2'
 							>
 								Generate
 							</Button>
@@ -93,17 +93,17 @@ const VideoPage = () => {
 					</Form>
 				</div>
 
-				<div className="space-y-4 mt-4">
+				<div className='mt-4 space-y-4'>
 					{isLoading && (
-						<div className="flex items-center justify-center w-full p-8 rounded-lg bg-muted">
+						<div className='flex w-full items-center justify-center rounded-lg bg-muted p-8'>
 							<Loader />
 						</div>
 					)}
 
-					{!videoUrl && !isLoading && <Empty label="No video generated" />}
+					{!videoUrl && !isLoading && <Empty label='No video generated' />}
 
 					{videoUrl && (
-						<video controls className="w-full mt-8 border rounded-lg aspect-video bg-black">
+						<video controls className='mt-8 aspect-video w-full rounded-lg border bg-black'>
 							<source src={videoUrl} />
 						</video>
 					)}

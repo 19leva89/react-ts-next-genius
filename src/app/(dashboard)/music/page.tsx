@@ -52,30 +52,30 @@ const MusicPage = () => {
 	return (
 		<div>
 			<Heading
-				title="Music Generation"
-				description="Turn your prompt into music"
+				title='Music Generation'
+				description='Turn your prompt into music'
 				icon={MusicIcon}
-				iconColor="text-emerald-500"
-				bgColor="bg-emerald-500/10"
+				iconColor='text-emerald-500'
+				bgColor='bg-emerald-500/10'
 			/>
 
-			<div className="px-4 lg:px-8">
+			<div className='px-4 lg:px-8'>
 				<div>
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
-							className="grid grid-cols-12 gap-2 w-full p-4 px-3 md:px-6 border rounded-lg focus-within:shadow-sm"
+							className='grid w-full grid-cols-12 gap-2 rounded-lg border p-4 px-3 focus-within:shadow-sm md:px-6'
 						>
 							<FormField
-								name="prompt"
+								name='prompt'
 								render={({ field }) => (
-									<FormItem className="col-span-12 lg:col-span-10">
-										<FormControl className="m-0 p-0 px-2">
+									<FormItem className='col-span-12 lg:col-span-10'>
+										<FormControl className='m-0 p-0 px-2'>
 											<Input
 												{...field}
 												disabled={isLoading}
-												placeholder="Piano solo"
-												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+												placeholder='Piano solo'
+												className='border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent'
 											/>
 										</FormControl>
 									</FormItem>
@@ -83,9 +83,9 @@ const MusicPage = () => {
 							/>
 
 							<Button
-								type="submit"
+								type='submit'
 								disabled={isLoading}
-								className="col-span-12 lg:col-span-2 w-full cursor-pointer"
+								className='col-span-12 w-full cursor-pointer lg:col-span-2'
 							>
 								Generate
 							</Button>
@@ -93,17 +93,17 @@ const MusicPage = () => {
 					</Form>
 				</div>
 
-				<div className="space-y-4 mt-4">
+				<div className='mt-4 space-y-4'>
 					{isLoading && (
-						<div className="flex items-center justify-center w-full p-8 rounded-lg bg-muted">
+						<div className='flex w-full items-center justify-center rounded-lg bg-muted p-8'>
 							<Loader />
 						</div>
 					)}
 
-					{!musicUrl && !isLoading && <Empty label="No music generated" />}
+					{!musicUrl && !isLoading && <Empty label='No music generated' />}
 
 					{musicUrl && (
-						<audio controls className="w-full mt-8">
+						<audio controls className='mt-8 w-full'>
 							<source src={musicUrl} />
 						</audio>
 					)}

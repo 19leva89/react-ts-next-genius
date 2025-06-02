@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { auth, currentUser } from '@clerk/nextjs/server'
 
 import { prisma } from '@/lib/prisma'
@@ -7,7 +7,7 @@ import { absoluteUrl } from '@/lib/utils'
 
 const settingsUrl = absoluteUrl('/settings')
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 	try {
 		const { userId } = await auth()
 		const user = await currentUser()

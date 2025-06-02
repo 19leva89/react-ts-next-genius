@@ -21,20 +21,20 @@ export const FreeCounter = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 	if (isPro) return null
 
 	return (
-		<div className="px-3">
-			<Card className="border-0 bg-white/10">
+		<div className='px-3'>
+			<Card className='border-0 bg-white/10'>
 				<CardContent>
-					<div className="mb-4 space-y-2 text-center text-sm text-white">
+					<div className='mb-4 space-y-2 text-center text-sm text-white'>
 						<p>
 							{apiLimitCount} / {MAX_FREE_COUNTS} Free generations
 						</p>
 
-						<Progress className="h-3 bg-secondary" value={(apiLimitCount / MAX_FREE_COUNTS) * 100} />
+						<Progress className='h-3 bg-secondary' value={(apiLimitCount / MAX_FREE_COUNTS) * 100} />
 					</div>
 
-					<Button variant="premium" onClick={() => onOpen()} className="w-full cursor-pointer">
+					<Button variant='premium' onClick={() => onOpen()} className='w-full cursor-pointer'>
 						Upgrade
-						<ZapIcon className="size-4 ml-2 fill-white" />
+						<ZapIcon className='ml-2 size-4 fill-white' />
 					</Button>
 				</CardContent>
 			</Card>

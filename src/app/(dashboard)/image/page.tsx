@@ -72,30 +72,30 @@ const ImagePage = () => {
 	return (
 		<div>
 			<Heading
-				title="Image Generation"
-				description="Turn your prompt into an image"
+				title='Image Generation'
+				description='Turn your prompt into an image'
 				icon={ImageIcon}
-				iconColor="text-pink-700"
-				bgColor="bg-pink-700/10"
+				iconColor='text-pink-700'
+				bgColor='bg-pink-700/10'
 			/>
 
-			<div className="px-4 lg:px-8">
+			<div className='px-4 lg:px-8'>
 				<div>
 					<Form {...form}>
 						<form
 							onSubmit={form.handleSubmit(onSubmit)}
-							className="grid grid-cols-20 gap-2 w-full p-4 px-3 md:px-6 border rounded-lg focus-within:shadow-sm"
+							className='grid w-full grid-cols-20 gap-2 rounded-lg border p-4 px-3 focus-within:shadow-sm md:px-6'
 						>
 							<FormField
-								name="prompt"
+								name='prompt'
 								render={({ field }) => (
-									<FormItem className="col-span-20 lg:col-span-8">
-										<FormControl className="w-full m-0 p-0 px-2">
+									<FormItem className='col-span-20 lg:col-span-8'>
+										<FormControl className='m-0 w-full p-0 px-2'>
 											<Input
 												{...field}
 												disabled={isLoading}
-												placeholder="A picture of react developer"
-												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+												placeholder='A picture of react developer'
+												className='border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent'
 											/>
 										</FormControl>
 									</FormItem>
@@ -103,25 +103,25 @@ const ImagePage = () => {
 							/>
 
 							<FormField
-								name="amount"
+								name='amount'
 								control={form.control}
 								render={({ field }) => (
-									<FormItem className="col-span-20 lg:col-span-4">
+									<FormItem className='col-span-20 lg:col-span-4'>
 										<Select
 											disabled={isLoading}
 											onValueChange={field.onChange}
 											value={field.value}
 											defaultValue={field.value}
 										>
-											<FormControl className="w-full">
-												<SelectTrigger className="cursor-pointer">
+											<FormControl className='w-full'>
+												<SelectTrigger className='cursor-pointer'>
 													<SelectValue defaultValue={field.value} />
 												</SelectTrigger>
 											</FormControl>
 
 											<SelectContent>
 												{amountOptions.map((option) => (
-													<SelectItem key={option.value} value={option.value} className="cursor-pointer">
+													<SelectItem key={option.value} value={option.value} className='cursor-pointer'>
 														{option.label}
 													</SelectItem>
 												))}
@@ -132,18 +132,18 @@ const ImagePage = () => {
 							/>
 
 							<FormField
-								name="resolution"
+								name='resolution'
 								control={form.control}
 								render={({ field }) => (
-									<FormItem className="col-span-20 lg:col-span-4">
+									<FormItem className='col-span-20 lg:col-span-4'>
 										<Select
 											disabled={isLoading}
 											onValueChange={field.onChange}
 											value={field.value}
 											defaultValue={field.value}
 										>
-											<FormControl className="w-full">
-												<SelectTrigger className="cursor-pointer">
+											<FormControl className='w-full'>
+												<SelectTrigger className='cursor-pointer'>
 													<SelectValue defaultValue={field.value} />
 												</SelectTrigger>
 											</FormControl>
@@ -153,7 +153,7 @@ const ImagePage = () => {
 													<SelectItem
 														key={resolution.value}
 														value={resolution.value}
-														className="cursor-pointer"
+														className='cursor-pointer'
 													>
 														{resolution.label}
 													</SelectItem>
@@ -165,9 +165,9 @@ const ImagePage = () => {
 							/>
 
 							<Button
-								type="submit"
+								type='submit'
 								disabled={isLoading}
-								className="col-span-20 lg:col-span-4 w-full cursor-pointer"
+								className='col-span-20 w-full cursor-pointer lg:col-span-4'
 							>
 								Generate
 							</Button>
@@ -175,29 +175,29 @@ const ImagePage = () => {
 					</Form>
 				</div>
 
-				<div className="space-y-4 mt-4">
+				<div className='mt-4 space-y-4'>
 					{isLoading && (
-						<div className="p-20">
+						<div className='p-20'>
 							<Loader />
 						</div>
 					)}
 
-					{images.length === 0 && !isLoading && <Empty label="No images generated" />}
+					{images.length === 0 && !isLoading && <Empty label='No images generated' />}
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+					<div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
 						{images.map((src, index) => (
-							<Card key={index} className="rounded-lg overflow-hidden">
-								<div className="relative aspect-square">
-									<Image src={src ?? ''} alt="Image" fill />
+							<Card key={index} className='overflow-hidden rounded-lg'>
+								<div className='relative aspect-square'>
+									<Image src={src ?? ''} alt='Image' fill />
 								</div>
 
-								<CardFooter className="p-2">
+								<CardFooter className='p-2'>
 									<Button
-										variant="secondary"
+										variant='secondary'
 										onClick={() => window.open(src)}
-										className="w-full cursor-pointer"
+										className='w-full cursor-pointer'
 									>
-										<DownloadIcon className="size-4" />
+										<DownloadIcon className='size-4' />
 										Download
 									</Button>
 								</CardFooter>
