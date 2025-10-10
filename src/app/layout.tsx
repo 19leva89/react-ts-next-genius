@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { PropsWithChildren } from 'react'
 import { ClerkProvider } from '@clerk/nextjs'
+import { Analytics } from '@vercel/analytics/next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import './globals.css'
@@ -34,6 +35,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
 					{children}
 
 					<Toaster position='bottom-right' expand={false} richColors />
+
+					{/* Allow track page views for Vercel */}
+					<Analytics />
 				</body>
 			</html>
 		</ClerkProvider>
