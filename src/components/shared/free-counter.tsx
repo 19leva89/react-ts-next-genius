@@ -3,7 +3,6 @@
 import { ZapIcon } from 'lucide-react'
 
 import { MAX_FREE_COUNTS } from '@/constants'
-import { useClient } from '@/hooks/use-client'
 import { userProModal } from '@/hooks/user-pro-modal'
 import { Button, Card, CardContent, Progress } from '@/components/ui'
 
@@ -14,9 +13,6 @@ interface Props {
 
 export const FreeCounter = ({ isPro = false, apiLimitCount = 0 }: Props) => {
 	const { onOpen } = userProModal()
-	const { isMounted } = useClient()
-
-	if (!isMounted) return null
 
 	if (isPro) return null
 

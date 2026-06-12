@@ -32,7 +32,7 @@ export const LandingHero = () => {
 			<div className='space-y-5 text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl'>
 				<h1>The Best AI Tool for</h1>
 
-				<div className='bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent'>
+				<div className='bg-linear-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent'>
 					<span ref={typedRef} />
 				</div>
 			</div>
